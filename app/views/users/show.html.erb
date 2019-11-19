@@ -1,0 +1,13 @@
+
+<h1><%= @user.name %></h1>
+<div><%= @user.address %>
+   <p><%= @user.email %></p></div>
+<h2>My last dishes</h2>
+ <% @dishes.each do |dish| %>
+  <div><strong><%= dish.name %></strong></div>
+   <p><%= dish.description %>
+  (<%= dish.price %> $)</p>
+
+
+<% end %>
+
