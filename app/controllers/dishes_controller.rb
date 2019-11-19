@@ -26,6 +26,7 @@ class DishesController < ApplicationController
   end
 
   def update
+    @dish = Dish.find(params[:id])
     if @dish.update(dish_params)
       redirect_to dish_path(@dish)
     else
