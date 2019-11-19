@@ -1,0 +1,8 @@
+<div class= "background" >
+  <%= simple_form_for [@dish] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.submit "add this dish", class:"my_btn" %>
+  <% end %>
+</div>
