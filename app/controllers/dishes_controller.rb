@@ -16,7 +16,7 @@ class DishesController < ApplicationController
 
   def create
     @dish = Dish.new(dish_params)
-    if @dish.save!
+    if @dish.save
       redirect_to dishes_path(@dish)
     else
       render :new
@@ -39,7 +39,7 @@ class DishesController < ApplicationController
   def destroy
     @dish = Dish.find(params[:id])
     @dish.destroy
-    redirect_to user_path
+    redirect_to dishes_path
   end
 
   private

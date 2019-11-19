@@ -1,10 +1,18 @@
-<%= form_for @dish do |f| %>
-  <%= f.label 'Dish Name' %><br>
+<%= simple_form_for @dish do |f| %>
+  <%= f.label 'Edit the name:' %><br>
   <%= f.text_field :name %><br>
 
-  <%= f.label 'Dish Description' %><br>
+  <%= f.label 'Edit the description:' %><br>
   <%= f.text_area :description %><br>
 
-  <%= f.submit "Edit your dish" %>
+  <%= f.label 'Edit your previous photo:' %><br>
+  <li><%= cl_image_tag @dish.photo%></li>
 
+  <%= f.input :photo_cache, as: :hidden %>
+  <%= f.input :photo %>
+
+  <%= f.submit "Edit your dish", class:"my_btn" %>
 <% end %>
+
+
+
