@@ -7,7 +7,11 @@
   <div><strong><%= dish.name %></strong></div>
    <p><%= dish.description %>
   (<%= dish.price %> $)</p>
-
-
 <% end %>
 
+<h3>My last orders</h3>
+<% @booked_dishes.each do |booked_dish| %>
+  <div><strong><%= booked_dish.name %></strong></div>
+   <p><%= booked_dish.description %>
+  (<%= booked_dish.price %> $)</p>
+  <% end %>
