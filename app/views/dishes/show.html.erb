@@ -1,0 +1,9 @@
+
+<h1><%= @dish.name %></h1>
+<ul>
+<li> <%= @dish.price %>$ </li>
+<li> Ingredients <%= @dish.description %> </li>
+<li> Cooked by <%= @dish.user.name %> </li>
+<li> <%= link_to "Edit", edit_dish_path(@dish),  method: :edit, data: {confirm: "Are you sure?"}, class:"btn" %></li>
+<li> <%= link_to "Delete", dishes_path,  method: :edit, data: {confirm: "Are you sure?"}, class:"btn" %></li>
+</ul>
