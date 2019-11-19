@@ -1,0 +1,9 @@
+<%= form_for @dish do |f| %>
+  <%= f.label 'Dish Name' %><br>
+  <%= f.text_field :name %><br>
+
+  <%= f.label 'Dish Description' %><br>
+  <%= f.text_area :description %><br>
+
+  <%= f.submit "Edit your dish" %>
+<% end %>

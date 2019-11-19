@@ -1,0 +1,8 @@
+<h1> Your order is :</h1>
+<h2><%= @booking.dish.name %></h2>
+<h2> You can pick up your dish at <%= @booking.user.name %> </h2>
+<h2> Pick up place: <%=@booking.user.address%></h2>
+<p><strong>Price: </strong> $<%= @booking.dish.price %></p>
+
+<%= link_to 'order here', dishes_path%>
+
