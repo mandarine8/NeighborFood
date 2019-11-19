@@ -5,4 +5,5 @@ class UsersController < ApplicationController
     @booked_dishes = @user.booked_dishes.last(5).to_a
 
   end
+
 end
