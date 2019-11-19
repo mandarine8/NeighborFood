@@ -1,0 +1,12 @@
+<div class= "background">
+  <%= simple_form_for [@dish] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :price %>
+    <%= f.input :description %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.input :photo %>
+    <%= f.hidden_field :user_id, value: @user.id %>
+    <%= f.submit "add this dish", class:"my_btn" %>
+  <% end %>
+<%= link_to "See all dishes", dishes_path, class:"my_btn" %>
+</div>
