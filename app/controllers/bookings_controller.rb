@@ -5,17 +5,11 @@ class BookingsController < ApplicationController
     end
 
     def create
-      @booking = Booking.new(booking_params)
-      if @booking.save
+      @booking = Booking.new
+      @booking.user = current_user
+      dish = Dish.find(params[:dish_id]) 
+      @booking.dish = dish
+      @booking.save
         redirect_to booking_path(@booking)
-      else
-        render "new"
-      end
-    end
-
- private
-
-    def booking_params
-      params.require(:booking).permit(:user_id, :dish_id)
     end
 end

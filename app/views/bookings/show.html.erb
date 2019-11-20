@@ -1,10 +1,21 @@
-<h1> Your order:</h1>
-<h2><strong><%= @booking.dish.name %></strong></h2>
-<h2><%= cl_image_tag @booking.dish.photo%></h2>
-<h3> You can pick up your dish at <strong><%= @booking.user.name %>'s home</strong> </h2>
-<h3> Address: <strong><%=@booking.user.address%></strong></h2>
-<h3>Price(taxes incl.): $<strong><%= @booking.dish.price %></strong></h3>
+
+<div class="booking-container">
+    <h1> Your order</h1>
+        <div class="card-product">
+            <div class="card-img">
+                <h2><%= cl_image_tag @booking.dish.photo%></h2>
+                    <div class="card-info">
+                        <h2><strong><%= @booking.dish.name %></strong></h2>
+                        <h3> You can pick up your dish at <strong><%= @booking.user.name %>'s home</strong> </h3>
+                        <h3> Address: <strong><%=@booking.user.address%></strong></h3>
+                        <h3>Price(taxes incl.): $<strong><%= @booking.dish.price %></strong></h3>
+                    </div>
+            </div>
+        </div>
 
 <%= link_to 'ORDER NOW', dishes_path, data: {confirm: "Are you sure?"}, class:"my_btn"%>
+</div>
+
+
 
 
