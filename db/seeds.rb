@@ -13,6 +13,7 @@ User.destroy_all
 
 u1 = User.create!(name: "Amandine", address: "Laurier", email: "caramandine@gmail.com", password: "password123", photo_url: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/rdw8huo8s0zfs5wvdzcl.jpg")
 p u1
+
 u2 = User.create!(name: "Chloé", address: "Drolet", email: "sauratchloe@gmail.com", password: "password123", photo_url: "https://avatars1.githubusercontent.com/u/55254804?v=4")
 u3 = User.create!(name: "Ryan", address: "Sherbrooke", email: "ryansalah0@gmail.com", password: "password123", photo_url: "https://media.licdn.com/dms/image/C5603AQGjh9zf54-xQA/profile-displayphoto-shrink_100_100/0?e=1579737600&v=beta&t=cq63vIyjXk8wXMWu_HftNoGS1W3MrLiPD9-yjh4ub9s")
 u4 = User.create!(name: "Charlotte", address: "Mont Royal", email: "charlottemontane@hotmail.com", password: "password123", photo_url: "https://avatars1.githubusercontent.com/u/55248679?v=4")
