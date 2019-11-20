@@ -2,11 +2,29 @@
     <h1><%= NeighborFood %></h1>
 </div>
 
-<h1>All dishes around you</h1>
-  <% @dishes.each do |dish|%>
-  <li><%= link_to dish.name, dish_path(dish) %></li>
-  <li><%= cl_image_tag dish.photo%></li>
-    <% end %>
+<div class="container">
+  <h3>All dishes around you</h3>
+  <div class="position-relative row">
+    <div class="card border col col-sm-8 position-sticky">
+      <div class="row" >
+        <% @dishes.each do |dish|%>
+          <div class="card-pic border mb-2 col col-sm-12">
+            <%= cl_image_tag dish.photo, class:"dish-img"%>
+            <div class="card-description p-3">
+              <h4><%= link_to dish.name, dish_path(dish) %></h4>
+              <p><%= link_to dish.description, dish_path(dish) %></p>
+              <p><%= link_to dish.price, dish_path(dish) %>$</p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="map-card col col-sm-4"
+      id="map"
+      style="width: 100%;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
   </div>
 </div>
 

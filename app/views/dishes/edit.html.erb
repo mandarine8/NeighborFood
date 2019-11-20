@@ -6,7 +6,7 @@
   <%= f.text_area :description %><br>
 
   <%= f.label 'Edit your previous photo:' %><br>
-  <li><%= cl_image_tag @dish.photo%></li>
+  <%= cl_image_tag @dish.photo, class:"dish-img-edit"%>
 
   <%= f.input :photo_cache, as: :hidden %>
   <%= f.input :photo %>
