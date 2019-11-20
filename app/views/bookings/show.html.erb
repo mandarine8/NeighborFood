@@ -1,8 +1,10 @@
-<h1> Your order is :</h1>
-<h2><%= @booking.dish.name %></h2>
-<h2> You can pick up your dish at <%= @booking.user.name %> </h2>
-<h2> Pick up place: <%=@booking.user.address%></h2>
-<p><strong>Price: </strong> $<%= @booking.dish.price %></p>
+<h1> Your order:</h1>
+<h2><strong><%= @booking.dish.name %></strong></h2>
+<h2><%= cl_image_tag @booking.dish.photo%></h2>
+<h3> You can pick up your dish at <strong><%= @booking.user.name %>'s home</strong> </h2>
+<h3> Address: <strong><%=@booking.user.address%></strong></h2>
+<h3>Price(taxes incl.): $<strong><%= @booking.dish.price %></strong></h3>
 
-<%= link_to 'order here', dishes_path%>
+<%= link_to 'ORDER NOW', dishes_path, data: {confirm: "Are you sure?"}, class:"my_btn"%>
+
 
