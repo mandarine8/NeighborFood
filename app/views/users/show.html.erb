@@ -1,22 +1,85 @@
 
-<h1><%= @user.name %></h1>
-<div><%= @user.address %>
+<!-- <h1>
+   <img class="img-circle" src="<%= @user.photo_url %>" width="100px"><%= @user.name %></h1>
+<div><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   <%= @user.address %>
    <p><%= @user.email %></p></div>
-<h2>My last dishes</h2>
- <% @dishes.each do |dish| %>
+ -->
+
+
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+
+      <h1>
+   <img class="img-circle" src="<%= @user.photo_url %>" width="100px"><%= @user.name %></h1>
+<div><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   <%= @user.address %>
+   <p><%= @user.email %></p>
+  <a href="#" class="btn-blue">Add your dish !</a>
+</div>
+      </h1>
+
+
+      <h3>My last dishes</h3>
+      <p><% @dishes.each do |dish| %>
   <div><strong><%= dish.name %></strong></div>
    <p><%= dish.description %>
   (<%= dish.price %> $)</p>
 
 <% end %>
-
-<h3>My last orders</h3>
-<% @booked_dishes.each do |booked_dish| %>
+    </div>
+    <div class="col-sm-4">
+      <h3>My last orders</h3>
+      <% @booked_dishes.each do |booked_dish| %>
   <div><strong><%= booked_dish.name %></strong></div>
    <p><%= booked_dish.description %>
   (<%= booked_dish.price %> $)</p>
   <% end %>
+    </div>
+ -->
 
 
 
-<% end %>
+<head>
+  <title>User SCSS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1><img class="img-circle" src="<%= @user.photo_url %>" width="100px"><%= @user.name %></h1>
+  <div class="info-user"><%= @user.address %>
+   <p><%= @user.email %></p>
+  </div>
+  <!-- <a href="#" class="btn-blue"> Add your dish !</a> -->
+
+  <a><%= link_to "Add your dish", new_dish_path, class:"btn-blue" %></a>
+
+
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>My last dishes</h3>
+      <p><% @dishes.each do |dish| %>
+  <div><strong><%= dish.name %></strong></div>
+   <p><%= dish.description %>
+  (<%= dish.price %> $)
+  <% end %>
+</p>
+
+    </div>
+    <div class="col-sm-4">
+      <h3>My last orders</h3>
+      <% @booked_dishes.each do |booked_dish| %>
+  <div><strong><%= booked_dish.name %></strong></div>
+   <p><%= booked_dish.description %>
+  (<%= booked_dish.price %> $)</p>
+  <% end %>
+    </div>
