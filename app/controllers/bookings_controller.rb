@@ -7,9 +7,9 @@ class BookingsController < ApplicationController
     def create
       @booking = Booking.new
       @booking.user = current_user
-      dish = Dish.find(params[:dish_id]) 
+      dish = Dish.find(params[:dish_id])
       @booking.dish = dish
-      @booking.save
+      @booking.save!
         redirect_to booking_path(@booking)
     end
 end
