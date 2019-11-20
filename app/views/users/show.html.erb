@@ -1,21 +1,33 @@
+<div class="jumbotron text-center">
+  <h1><img class="img-circle" src="<%= @user.photo_url %>" width="100px"><%= @user.name %></h1>
+  <div class="info-user"><%= @user.address %>
+   <p><%= @user.email %></p>
+  </div>
+  <!-- <a href="#" class="btn-blue"> Add your dish !</a> -->
 
-<h1><%= @user.name %></h1>
-<div><%= @user.address %>
-   <p><%= @user.email %></p></div>
-<h2>My last dishes</h2>
- <% @dishes.each do |dish| %>
-  <div><strong><%= dish.name %></strong></div>
-   <p><%= dish.description %>
-  (<%= dish.price %> $)</p>
-  <li><%= cl_image_tag dish.photo%></li>
+  <a><%= link_to "Add your dish", new_dish_path, class:"btn-blue" %></a>
 
-<% end %>
 
-<h3>My last orders</h3>
-<% @booked_dishes.each do |booked_dish| %>
-  <div><strong><%= booked_dish.name %></strong></div>
-   <p><%= booked_dish.description %>
-  (<%= booked_dish.price %> $)</p>
-  <% end %>
 
-  <%= link_to "Add a dish", new_dish_path, class:"my_btn" %>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>My last dishes</h3>
+      <% @dishes.each do |dish| %>
+        <div><strong><%= dish.name %></strong></div>
+        <p><%= dish.description %> (<%= dish.price %> $)</p>
+        <%# cl_image_tag dish.photo%>
+      <% end %>
+    </div>
+    <div class="col-sm-4">
+      <h3>My last orders</h3>
+      <% @booked_dishes.each do |booked_dish| %>
+        <div><strong><%= booked_dish.name %></strong></div>
+        <p><%= booked_dish.description %> (<%= booked_dish.price %> $)</p>
+      <% end %>
+    </div>
+
+  </div>
+</div>
