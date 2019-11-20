@@ -6,20 +6,17 @@
     background: white;
     h1 {
         color: black;
-        text-align: center;
+        text-align: left;
     }
 }
 
-
-.card-product {
-    overflow: hidden;
-    height: 300px;
-    background: #e9ecef;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  
+.card-img {
+   
 }
+
 .card-info {
     display: flex-column;
+    text-align: left;
 }
 
 .my_btn {
