@@ -3,10 +3,13 @@
 <div><%= @user.address %>
    <p><%= @user.email %></p></div>
 <h2>My last dishes</h2>
+<div class="container">
  <% @dishes.each do |dish| %>
   <div><strong><%= dish.name %></strong></div>
+  <%= cl_image_tag dish.photo, class:"dish-img"%>
    <p><%= dish.description %>
   (<%= dish.price %> $)</p>
+</div>
 
 <% end %>
 
@@ -15,8 +18,4 @@
   <div><strong><%= booked_dish.name %></strong></div>
    <p><%= booked_dish.description %>
   (<%= booked_dish.price %> $)</p>
-  <% end %>
-
-
-
 <% end %>

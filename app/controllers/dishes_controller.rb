@@ -2,6 +2,12 @@ class DishesController < ApplicationController
 
   def index
     @dishes = Dish.all
+    @markers = @dishes.map do |dish|
+      {
+        lat: dish.user.latitude,
+        lng: dish.user.longitude
+      }
+    end
   end
 
   def show

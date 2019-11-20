@@ -13,7 +13,7 @@ User.destroy_all
 
 u1 = User.create!(name: "Amandine", address: "Laurier", email: "caramandine@gmail.com", password: "password123")
 p u1
-u2 = User.create!(name: "Chloé", address: "Drolet", email: "sauratchloe@gmail.com", password: "password123")
+u2 = User.create!(name: "Chloé", address: "5395 rue Drolet, Montréal", email: "sauratchloe@gmail.com", password: "password123")
 u3 = User.create!(name: "Ryan", address: "Sherbrooke", email: "ryansalah0@gmail.com", password: "password123")
 u4 = User.create!(name: "Charlotte", address: "Mont Royal", email: "charlottemontane@hotmail.com", password: "password123")
 u5 = User.create!(name: "Philippe", address: "Beaubien", email: "philou@gmail.com", password: "password123")
