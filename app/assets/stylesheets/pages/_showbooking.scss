@@ -1,0 +1,34 @@
+
+.booking-container {
+    border: solid;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+    h1 {
+        color: black;
+        text-align: center;
+    }
+}
+
+
+.card-product {
+    overflow: hidden;
+    height: 300px;
+    background: #e9ecef;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+}
+.card-info {
+    display: flex-column;
+}
+
+.my_btn {
+    display: inline-block;
+    background-color: #1EDD88;
+    padding: 16px 36px;
+    border-radius: 50px;
+    color: white;
+    align-items: left;
+    margin: 20px;
+    text-align: center;
+   }
