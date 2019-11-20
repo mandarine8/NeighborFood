@@ -7,6 +7,7 @@
   <div><strong><%= dish.name %></strong></div>
    <p><%= dish.description %>
   (<%= dish.price %> $)</p>
+  <li><%= cl_image_tag dish.photo%></li>
 
 <% end %>
 
@@ -17,6 +18,4 @@
   (<%= booked_dish.price %> $)</p>
   <% end %>
 
-
-
-<% end %>
+  <%= link_to "Add a dish", new_dish_path, class:"my_btn" %>
