@@ -1,1 +1,19 @@
 
+.nav-container {
+  width: 900px;
+  margin: auto;
+  display: flex;
+  align-content: right;
+}
+
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 900px;
+  height: 400px;
+  margin: auto;
+  color: white;
+}

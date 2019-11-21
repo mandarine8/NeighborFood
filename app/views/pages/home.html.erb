@@ -1,28 +1,25 @@
 
 <div class="navbar-minimalist">
-  <h1>NeighborFood</h1>
+  <h1><%= link_to"NeighborFood", root_path, class:"btn btn-neighborfood"%></h1>
 
-      <div class="nav-container">
+      <div class="nav-container d-flex justify-content-end">
+        <%= link_to "See all dishes", dishes_path, class:"btn nb-light" %>
+        <%= link_to "Become a cooker", cooker_path, class:"btn nb-light" %>
+        <%= link_to "Login", new_user_session_path, class:"btn btn-login" %>
+        <%= link_to "log out", destroy_user_session_path, method: :delete, class:"btn btn-login" %>
 
-        <%= link_to "See all dishes", dishes_path, class:"btn my-btn" %>
-
-        <%= link_to "Become a cooker", cooker_path, class:"btn my-btn"%>
-
-        <%= link_to "Login", new_user_session_path, class:"btn btn-secondary" %>
-        <%= link_to "log out", destroy_user_session_path, method: :delete, class:"btn btn-secondary" %>
       </div>
     </div>
 </div>
 
 
 
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://food-images.files.bbci.co.uk/food/recipes/simple_fish_dish_98008_16x9.jpg); background-size: cover;">
 
-<div class="banner" style="background-image: url(https://food-images.files.bbci.co.uk/food/recipes/simple_fish_dish_98008_16x9.jpg);">
+    <div class="home-container">
 
-    <div class="container">
-
-      <h1>Find your favorite homemade dish around you!</h1>
-      <%= link_to "See all dishes", dishes_path, class:"btn btn-primary" %>
+      <div class="banner h1">Find your favorite homemade dish around you!</div>
+      <%= link_to "See all dishes", dishes_path, class:"btn btn-search" %>
     </div>
   </div>
 
@@ -30,11 +27,11 @@
 
 
  <div class="footer">
-    <div class="links">
+    <div class="footer-links">
       <a href="#"><i class="fab fa-fw fa-facebook-f"></i></a>
       <a href="#"><i class="fab fa-fw fa-github"></i></a>
       <a href="#"><i class="fab fa-fw fa-instagram"></i></a>
-      <p><i class="fas fa-heart"></i> Cook, Share, Eat <i class="fas fa-heart"></i></p>
-    </div>
+      </div> <p><i class="fas fa-heart"></i> Cook, Share, Eat <i class="fas fa-heart"></i></p>
   </div>
+
 

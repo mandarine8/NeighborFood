@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:show]
   resources :users, only: [:show]
+  # delete in prod
+  get "/style", to: "pages#style"
   get "/become_cooker", to: "users#become_cooker", as: 'cooker'
 end
