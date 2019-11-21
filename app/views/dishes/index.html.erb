@@ -1,60 +1,64 @@
+<div class="background">
+  <div class="navbar-minimalist">
+    <h1><%= link_to"NeighborFood", root_path, class:"btn btn-neighborfood"%></h1>
 
-<div class="content m-5">
+        <div class="nav-container d-flex justify-content-end">
+          <%= link_to "See all dishes", dishes_path, class:"btn nb-light" %>
+          <%= link_to "Become a cooker", cooker_path, class:"btn nb-light" %>
+          <%= link_to "Login", new_user_session_path, class:"btn btn-login" %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"btn btn-login" %>
+        </div>
+  </div>
 
-<div class="navbar-minimalist">
-  <h1><%= link_to"NeighborFood", root_path%></h1>
-      <div class="nav-container">
-        <%= link_to "See all dishes", dishes_path, class:"btn nb-light" %>
-        <%= link_to "Become a cooker", cooker_path, class:"btn nb-light"%>
-        <%= link_to "Login", new_user_session_path, class:"btn btn-login" %>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"btn btn-login" %>
-      </div>
+  <div class="content m-4">
+    <div class="search col col-6">
+      <h3>All dishes around you</h3>
+        <%= form_tag dishes_path, method: :get, class: "inline-form d-flex my-3" do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find a dish"
+          %>
+          <%= submit_tag "Search", class: "btn-login-search" %>
+        <% end %>
     </div>
-</div>
 
 
-<div class="content m-4">
 
-  <h3>All dishes around you</h3>
-    <%= form_tag dishes_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find a dish"
-      %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
-
-  <div class="position-relative row">
-    <div class="card border col col-sm-8 position-sticky">
-      <div class="row" >
-        <% @dishes.each do |dish|%>
-          <div class="card-pic border mb-2 col col-sm-12">
-            <%= cl_image_tag dish.photo, class:"dish-img"%>
-            <div class="card-description p-3">
-              <h4><%= link_to dish.name, dish_path(dish) %></h4>
-              <p><%= dish.description %></p>
-              <p><%= dish.price %>$</p>
+        <div class="position-relative custom-row">
+          <div class="card border col col-sm-6 position-sticky">
+            <div class="row" >
+              <% @dishes.each do |dish|%>
+                <div class="card-pic border mb-2 col col-sm-12">
+                  <%= cl_image_tag dish.photo, class:"dish-img"%>
+                  <div class="card-description p-3">
+                    <h4><%= link_to dish.name, dish_path(dish) %></h4>
+                    <p><%= dish.description %></p>
+                    <p><%= dish.price %>$</p>
+                  </div>
+                </div>
+              <% end %>
             </div>
           </div>
-        <% end %>
+          <div class="map-card col col-sm-6"
+            id="map"
+            style="width: 100%;"
+            data-markers="<%= @markers.to_json %>"
+            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+          ></div>
+        </div>
       </div>
-    </div>
-    <div class="map-card col col-sm-4"
-      id="map"
-      style="width: 100%;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-    ></div>
-  </div>
-</div>
 
- <div class="footer">
+
+  <div class="footer">
     <div class="footer-links">
       <a href="#"><i class="fab fa-fw fa-facebook-f"></i></a>
       <a href="#"><i class="fab fa-fw fa-github"></i></a>
       <a href="#"><i class="fab fa-fw fa-instagram"></i></a>
-      </div> <p><i class="fas fa-heart"></i> Cook, Share, Eat <i class="fas fa-heart"></i></p>
+    </div> <p><i class="fas fa-heart"></i> Cook, Share, Eat <i class="fas fa-heart"></i></p>
   </div>
+
+</div>
+
 
 
