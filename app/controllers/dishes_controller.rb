@@ -5,8 +5,14 @@ class DishesController < ApplicationController
     @markers = @dishes.map do |dish|
       {
         lat: dish.user.latitude,
-        lng: dish.user.longitude
+        lng: dish.user.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { name: dish.name })
       }
+    end
+     if params[:query].present?
+      @dishes = Dish.where(title: params[:query])
+    else
+      @dishes = Dish.all
     end
   end
 

@@ -1,9 +1,9 @@
-<div class="navbar">
-    <h1><%= NeighborFood %></h1>
-</div>
-
-<div class="container">
+<div class="content m-5">
   <h3>All dishes around you</h3>
+    <%= simple_form_for [dishes] do |f| %>
+    <%= f.input :name %>
+    <%= f.submit "search", class:"my_btn" %>
+    <% end %>
   <div class="position-relative row">
     <div class="card border col col-sm-8 position-sticky">
       <div class="row" >
@@ -12,8 +12,8 @@
             <%= cl_image_tag dish.photo, class:"dish-img"%>
             <div class="card-description p-3">
               <h4><%= link_to dish.name, dish_path(dish) %></h4>
-              <p><%= link_to dish.description, dish_path(dish) %></p>
-              <p><%= link_to dish.price, dish_path(dish) %>$</p>
+              <p><%= dish.description %></p>
+              <p><%= dish.price %>$</p>
             </div>
           </div>
         <% end %>
