@@ -57,6 +57,20 @@
   }
 }
 
+.btn-login-search {
+  border: 1px solid #1f6650;
+  padding: 8px 16px;
+  margin-left: 16px;
+  border-radius: 50px;
+  color: white;
+  background-color: #6f9a8d;
+  overflow: auto;
+  &:hover {
+    background-color: #1f6650;
+    border: 1px solid #1f6650;
+  }
+}
+
 .btn.nb-light {
   color: #4A4A4A;
 
