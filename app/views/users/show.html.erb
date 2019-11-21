@@ -1,3 +1,14 @@
+<div class="container">
+
+
+  <div class="user-profile-header">
+
+    <div class="jumbotron text-center">
+      <h1><img class="img-circle" src="<%= @user.photo_url %>" width="100px"><%= @user.name %></h1>
+      <div class="info-user"><%= @user.address %>
+       <p><%= @user.email %></p>
+       <p><strong>World Famous</strong> for cooking: <strong><%= @dishes.last.name %></strong>
+
 
 <div class="navbar-minimalist">
   <h1><%= link_to"NeighborFood", root_path, class:"btn btn-neighborfood"%></h1>
@@ -7,27 +18,17 @@
         <%= link_to "Become a cooker", cooker_path, class:"btn nb-light" %>
         <%= link_to "Login", new_user_session_path, class:"btn btn-login" %>
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"btn btn-login" %>
+
       </div>
+      <!-- <a href="#" class="btn-blue"> Add your dish !</a> -->
+
     </div>
-</div>
-
-
-<div class="jumbotron text-center">
-  <h1><img class="img-circle" src="<%= @user.photo_url %>" width="100px"><%= @user.name %></h1>
-  <div class="info-user"><%= @user.address %>
-   <p><%= @user.email %></p>
-   <p><strong>World Famous</strong> for cooking: <strong><%= @dishes.last.name %></strong>
 
   </div>
-  <!-- <a href="#" class="btn-blue"> Add your dish !</a> -->
 
-</div>
+  <div class="user-profile-grid">
 
-
-<div class="container">
-  <div class="row">
-    <%= link_to "Add your dish", new_dish_path, class:"btn-blue" %>
-    <div class="col-sm-4" style="bottom: 50px;">
+    <div class="user-cooked-dishes-container">
       <h3>My last dishes</h3>
       <% @dishes.each do |dish| %>
         <div><strong><%= dish.name %></strong></div>
@@ -35,7 +36,8 @@
         <%# cl_image_tag dish.photo%>
       <% end %>
     </div>
-    <div class="col-sm-4" style="bottom: 50px;">
+
+    <div class="user-booked-dishes-container">
       <h3>My last orders</h3>
       <% @booked_dishes.each do |booked_dish| %>
         <div><strong><%= booked_dish.name %></strong></div>
@@ -43,9 +45,13 @@
       <% end %>
     </div>
 
+    <div class="user-actions-container">
+        <%= link_to "Add your dish", new_dish_path, class:"btn-green btn-block" %>
+        <%= link_to "Make an order", dishes_path, class:"btn-green btn-block" %>
+    </div>
 
 
-  <a><%= link_to "Add your dish", new_dish_path, class:"btn-blue" %></a>
-  <a><%= link_to "Make an order", dishes_path, class:"btn-blue" %></a>
+  </div>
+
 
 </div>

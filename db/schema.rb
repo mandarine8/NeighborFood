@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2019_11_21_164330) do
     t.datetime "remember_created_at"
     t.string "address"
     t.string "name"
+    t.string "photo_url"
     t.float "latitude"
     t.float "longitude"
     t.string "photo_url"
