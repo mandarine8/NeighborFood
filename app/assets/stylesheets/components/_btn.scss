@@ -9,10 +9,10 @@
 
 }
 
-.btn-blue {
+.btn-green {
   background-color: #1f6650;
   color: white;
-  padding: 15px 100px;
+  padding: 16px;
   border-radius: 50px;
   height: 50px;
   text-align: center;
@@ -20,8 +20,6 @@
   text-decoration: none;
   font-weight: 500;
   font-size: 14px;
-  margin-left: 600px;
-  // margin-right: 800px;
   &:hover {
    background-color: blue;
    border: 1px solid #1f6650;
@@ -47,6 +45,20 @@
 .btn-login {
   border: 1px solid #1f6650;
   padding: 8px 16px;
+  border-radius: 50px;
+  color: white;
+  background-color: #6f9a8d;
+  overflow: auto;
+  &:hover {
+    background-color: #1f6650;
+    border: 1px solid #1f6650;
+  }
+}
+
+.btn-login-search {
+  border: 1px solid #1f6650;
+  padding: 8px 16px;
+  margin-left: 16px;
   border-radius: 50px;
   color: white;
   background-color: #6f9a8d;

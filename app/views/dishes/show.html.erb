@@ -1,13 +1,11 @@
 <div class="navbar-minimalist">
-  <h1>NeighborFood</h1>
+  <h1><%= link_to"NeighborFood", root_path, class:"btn btn-neighborfood"%></h1>
 
-      <div class="nav-container">
-
-        <%= link_to "See all dishes", dishes_path, class:"btn my-btn" %>
-
-        <%= link_to "Become a cooker", new_user_registration_path, class:"btn my-btn" %>
-
-        <%= link_to "Login", new_user_session_path, class:"btn btn-secondary" %>
+      <div class="nav-container d-flex justify-content-end">
+        <%= link_to "See all dishes", dishes_path, class:"btn nb-light" %>
+        <%= link_to "Become a cooker", cooker_path, class:"btn nb-light" %>
+        <%= link_to "Login", new_user_session_path, class:"btn btn-login" %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"btn btn-login" %>
       </div>
     </div>
 </div>
@@ -26,12 +24,25 @@
   </div>
 </div>
 
-  <%= simple_form_for [@dish, @booking] do |f| %>
+<%= simple_form_for [@dish, @booking] do |f| %>
+
     <%= f.input :date, html5: true %>
     <%= f.input :quantity %>
-    <%= f.submit "ORDER HERE", class:"my_btn"%>
+    <%= f.submit "ORDER HERE", class:"btn-geen"%>
   <% end %>
 
-<%= link_to "Edit", edit_dish_path(@dish), class:"my-btn" %>
+<%= link_to "Edit", edit_dish_path(@dish), class:"btn-green" %>
 <%= link_to "Delete this dish", dish_path(@dish), method: :delete, data: {confirm: "Are you sure?"}, class:"my-btn" %>
-<%= link_to "See all dishes", dishes_path, class:"my_btn" %>
+
+<%= link_to "See all dishes", dishes_path, class:"btn-green" %>
+
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-fw fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-fw fa-github"></i></a>
+    <a href="#"><i class="fab fa-fw fa-instagram"></i></a>
+  </div> <p><i class="fas fa-heart"></i> Cook, Share, Eat <i class="fas fa-heart"></i></p>
+</div>
+
+
