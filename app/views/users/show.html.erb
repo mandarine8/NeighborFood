@@ -1,3 +1,18 @@
+<div class="navbar-minimalist">
+  <h1><%= link_to"NeighborFood", root_path%></h1>
+
+      <div class="nav-container">
+
+        <%= link_to "See all dishes", dishes_path, class:"btn my-btn" %>
+
+        <%= link_to "Become a cooker", new_user_registration_path, class:"btn my-btn" %>
+
+        <%= link_to "Login", new_user_session_path, class:"btn btn-secondary" %>
+      </div>
+    </div>
+</div>
+
+
 <div class="jumbotron text-center">
   <h1><img class="img-circle" src="<%= @user.photo_url %>" width="100px"><%= @user.name %></h1>
   <div class="info-user"><%= @user.address %>
@@ -28,5 +43,9 @@
     </div>
 
   </div>
+
+
+  <a><%= link_to "Add your dish", new_dish_path, class:"btn-blue" %></a>
+  <a><%= link_to "Make an order", dishes_path, class:"btn-blue" %></a>
 
 </div>

@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   # delete in prod
   get "/style", to: "pages#style"
+  get "/become_cooker", to: "users#become_cooker", as: 'cooker'
 end
