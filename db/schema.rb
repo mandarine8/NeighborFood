@@ -43,10 +43,10 @@ ActiveRecord::Schema.define(version: 2019_11_21_164259) do
     t.datetime "remember_created_at"
     t.string "address"
     t.string "name"
+    t.string "photo_url"
     t.float "latitude"
     t.float "longitude"
-    t.string "photo_url"
-    t.boolean "cooker", default: false
+    t.boolean "cooker"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
