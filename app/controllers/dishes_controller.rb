@@ -1,18 +1,17 @@
 class DishesController < ApplicationController
 
   def index
-    @dishes = Dish.all
+    if params[:query].present?
+      @dishes = Dish.search_by_name(params[:query])
+    else
+      @dishes = Dish.all
+    end
     @markers = @dishes.map do |dish|
       {
         lat: dish.user.latitude,
         lng: dish.user.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { name: dish.name })
       }
-    end
-     if params[:query].present?
-      @dishes = Dish.where(title: params[:query])
-    else
-      @dishes = Dish.all
     end
   end
 
