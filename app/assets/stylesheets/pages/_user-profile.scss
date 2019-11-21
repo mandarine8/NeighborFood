@@ -1,0 +1,18 @@
+.user-profile-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+}
+
+@media (min-width: 764px) {
+  .user-profile-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .user-profile-grid {
+    grid-template-columns: 2fr 2fr 1fr;
+  }
+}

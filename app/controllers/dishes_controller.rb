@@ -18,17 +18,17 @@ class DishesController < ApplicationController
 
   def show
     @dish = Dish.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
     @dish = Dish.new
-    # @user = current_user if current_user
-    @user = User.first
   end
 
   def create
     @dish = Dish.new(dish_params)
-    if @dish.save
+    @dish.user = current_user
+    if @dish.save!
       redirect_to dishes_path(@dish)
     else
       render :new
@@ -57,6 +57,6 @@ class DishesController < ApplicationController
   private
 
   def dish_params
-    params.require(:dish).permit(:name, :description, :price, :photo, :photo_cache, :user_id)
+    params.require(:dish).permit(:name, :description, :price, :photo, :user_id)
   end
 end
