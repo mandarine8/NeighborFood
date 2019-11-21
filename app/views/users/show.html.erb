@@ -7,9 +7,11 @@
 
 </div>
 
+
 <div class="container">
   <div class="row">
-    <div class="col-sm-4">
+    <%= link_to "Add your dish", new_dish_path, class:"btn-blue" %>
+    <div class="col-sm-4" style="bottom: 50px;">
       <h3>My last dishes</h3>
       <% @dishes.each do |dish| %>
         <div><strong><%= dish.name %></strong></div>
@@ -17,7 +19,7 @@
         <%# cl_image_tag dish.photo%>
       <% end %>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-4" style="bottom: 50px;">
       <h3>My last orders</h3>
       <% @booked_dishes.each do |booked_dish| %>
         <div><strong><%= booked_dish.name %></strong></div>
@@ -27,5 +29,4 @@
 
   </div>
 
-  <a><%= link_to "Add your dish", new_dish_path, class:"btn-blue" %></a>
 </div>
