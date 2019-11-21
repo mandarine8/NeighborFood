@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:show]
   resources :users, only: [:show]
+  get "/become_cooker", to: "users#become_cooker", as: 'cooker'
 end

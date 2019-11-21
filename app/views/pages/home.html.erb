@@ -6,9 +6,10 @@
 
         <%= link_to "See all dishes", dishes_path, class:"btn my-btn" %>
 
-        <%= link_to "Become a cooker", new_user_registration_path, class:"btn my-btn" %>
+        <%= link_to "Become a cooker", cooker_path, class:"btn my-btn"%>
 
         <%= link_to "Login", new_user_session_path, class:"btn btn-secondary" %>
+        <%= link_to "log out", destroy_user_session_path, method: :delete, class:"btn btn-secondary" %>
       </div>
     </div>
 </div>
