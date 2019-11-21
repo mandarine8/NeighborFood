@@ -2,11 +2,16 @@ class DishesController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @dishes = Dish.all
+    if params[:query].present?
+      @dishes = Dish.search_by_name(params[:query])
+    else
+      @dishes = Dish.all
+    end
     @markers = @dishes.map do |dish|
       {
         lat: dish.user.latitude,
-        lng: dish.user.longitude
+        lng: dish.user.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { name: dish.name })
       }
     end
   end
