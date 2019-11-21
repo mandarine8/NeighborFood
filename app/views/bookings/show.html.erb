@@ -20,7 +20,8 @@
                         <h2><strong><%= @booking.dish.name %></strong></h2>
                         <h3> You can pick up your dish at <strong><%= @booking.user.name %>'s home</strong> </h3>
                         <h3> Address: <strong><%=@booking.user.address%></strong></h3>
-                        <h3>Price(taxes incl.): $<strong><%= @booking.dish.price %></strong></h3>
+                        <h3> You order <strong><%=@booking.quantity%></strong> <%=@booking.dish.name%></h3>
+                        <h3>Price(taxes incl.): $<strong><%= @booking.dish.price * @booking.quantity %></strong></h3>
                     </div>
             </div>
         </div>

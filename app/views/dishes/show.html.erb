@@ -19,13 +19,18 @@
       <li> <%= @dish.price %>$ </li>
       <li> Ingredients <%= @dish.description %> </li>
       <li> Cooked by <%= @dish.user.name %> </li>
-      <li><%= link_to "Order this dish", dish_bookings_path(@dish), class:"my_btn", method: :post %></li>
-      <li> <%= link_to "Edit", edit_dish_path(@dish), class:"my-btn" %></li>
-      <li> <%= link_to "Delete this dish", dish_path(@dish), method: :delete, data: {confirm: "Are you sure?"}, class:"my-btn" %></li>
       </ul>
     </div>
   </div>
 </div>
+<%= simple_form_for [@dish, @booking] do |f| %>
+    <%= f.input :date, html5: true %>
+    <%= f.input :quantity %>
+    <%= f.submit "ORDER HERE", class:"my_btn"%>
+  <% end %>
+
+<%= link_to "Edit", edit_dish_path(@dish), class:"my-btn" %>
+<%= link_to "Delete this dish", dish_path(@dish), method: :delete, data: {confirm: "Are you sure?"}, class:"my-btn" %>
 <%= link_to "See all dishes", dishes_path, class:"my_btn" %>
 
 <div class="footer">
@@ -35,3 +40,4 @@
     <a href="#"><i class="fab fa-fw fa-instagram"></i></a>
   </div> <p><i class="fas fa-heart"></i> Cook, Share, Eat <i class="fas fa-heart"></i></p>
 </div>
+

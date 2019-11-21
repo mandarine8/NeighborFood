@@ -5,11 +5,20 @@ class BookingsController < ApplicationController
     end
 
     def create
-      @booking = Booking.new
+      
+      @booking = Booking.new(booking_params)
       @booking.user = current_user
       dish = Dish.find(params[:dish_id])
       @booking.dish = dish
       @booking.save!
         redirect_to booking_path(@booking)
     end
-end
+
+    private
+
+    def booking_params
+      params.require(:booking).permit(:date, :quantity)
+    end
+
+
+  end
