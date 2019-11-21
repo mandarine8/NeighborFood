@@ -1,4 +1,20 @@
+
 <div class="content m-5">
+
+<div class=“navbar-minimalist”>
+  <h1><%= link_to”NeighborFood”, root_path%></h1>
+      <div class=“nav-container”>
+        <%= link_to “See all dishes”, dishes_path, class:“btn nb-light” %>
+        <%= link_to “Become a cooker”, cooker_path, class:“btn nb-light”%>
+        <%= link_to “Login”, new_user_session_path, class:“btn btn-login” %>
+        <%= link_to “log out”, destroy_user_session_path, method: :delete, class:“btn btn-login” %>
+      </div>
+    </div>
+</div>
+
+
+<div class="content m-4">
+
   <h3>All dishes around you</h3>
     <%= form_tag dishes_path, method: :get do %>
       <%= text_field_tag :query,
@@ -33,12 +49,12 @@
   </div>
 </div>
 
-<div class="footer">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
+ <div class="footer">
+    <div class="footer-links">
+      <a href="#"><i class="fab fa-fw fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-fw fa-github"></i></a>
+      <a href="#"><i class="fab fa-fw fa-instagram"></i></a>
+      </div> <p><i class="fas fa-heart"></i> Cook, Share, Eat <i class="fas fa-heart"></i></p>
   </div>
-</div>
+
 
