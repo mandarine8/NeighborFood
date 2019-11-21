@@ -48,10 +48,9 @@ ActiveRecord::Schema.define(version: 2019_11_21_164330) do
     t.string "photo_url"
     t.float "latitude"
     t.float "longitude"
-<<<<<<< HEAD
-=======
+
     t.string "photo_url"
->>>>>>> 88dc9bb8b511a9fa62a6059ecacad6ea0fd714bd
+
     t.boolean "cooker"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
