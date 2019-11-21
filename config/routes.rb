@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:show]
   resources :users, only: [:show]
+  # delete in prod
+  get "/style", to: "pages#style"
 end
