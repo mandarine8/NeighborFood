@@ -18,6 +18,7 @@ class DishesController < ApplicationController
 
   def show
     @dish = Dish.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
