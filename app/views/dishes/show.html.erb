@@ -10,7 +10,7 @@
     </div>
 </div>
 
-<div class="content">
+<div class="content-show">
   <div class="card-pic">
     <%= cl_image_tag @dish.photo, class:"dish-img-show"%>
     <div class="card-description">
@@ -24,20 +24,21 @@
   </div>
 </div>
 
-<%= simple_form_for [@dish, @booking] do |f| %>
-
+<div class="simple-form">
+  <%= simple_form_for [@dish, @booking] do |f| %>
     <%= f.input :date, html5: true %>
     <%= f.input :quantity %>
-    <%= f.submit "ORDER HERE", class:"btn-geen"%>
+    <%= f.submit "ORDER HERE", class:"my-btn"%>
   <% end %>
+</div>
 
 <%= link_to "Edit", edit_dish_path(@dish), class:"btn-green" %>
-<%= link_to "Delete this dish", dish_path(@dish), method: :delete, data: {confirm: "Are you sure?"}, class:"my-btn" %>
+<%= link_to "Delete this dish", dish_path(@dish), method: :delete, data: {confirm: "Are you sure?"}, class:"btn-green" %>
 
 <%= link_to "See all dishes", dishes_path, class:"btn-green" %>
 
 
-<div class="footer">
+<div class="footer mt-5">
   <div class="footer-links">
     <a href="#"><i class="fab fa-fw fa-facebook-f"></i></a>
     <a href="#"><i class="fab fa-fw fa-github"></i></a>
