@@ -2,6 +2,8 @@
   <h1><img class="img-circle" src="<%= @user.photo_url %>" width="100px"><%= @user.name %></h1>
   <div class="info-user"><%= @user.address %>
    <p><%= @user.email %></p>
+   <p><strong>World Famous</strong> for cooking: <strong><%= @dishes.last.name %></strong>
+
   </div>
   <!-- <a href="#" class="btn-blue"> Add your dish !</a> -->
 
@@ -27,6 +29,5 @@
       <% end %>
     </div>
 
-  </div>
 
 </div>
