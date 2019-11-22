@@ -9,10 +9,15 @@
 </div>
 <div class="container">
 
+  <%= simple_form_for([@user, @rating]) do |t| %>
+    <%= t.input :note %>
+    <%= t.submit "noter" %>
+  <% end %>
+
   <div class="user-profile-header">
 
     <div class="jumbotron text-center">
-      <h1><img class="img-circle" src="<%= @user.photo_url %>" width="100px"><%= @user.name %></h1>
+      <h1><img class="img-circle" src="<%= @user.photo_url %>" width="100px"><%= @user.name %> &nbsp; <%= @user.ratings.reduce(0) { |sum, val| val.note + sum } / @user.ratings.count %> /5</h1>
       <div class="info-user"><%= @user.address %>
        <p><%= @user.email %></p>
        <p><strong>World Famous</strong> for cooking: <strong><%= @dishes.last.name %></strong>
@@ -47,3 +52,5 @@
 
 
 </div>
+
+

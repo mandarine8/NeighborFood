@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create]
   end
   resources :bookings, only: [:show]
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    resources :ratings, only: [:new, :create]
+  end
   # delete in prod
   get "/style", to: "pages#style"
   get "/become_cooker", to: "users#become_cooker", as: 'cooker'
