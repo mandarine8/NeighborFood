@@ -1,27 +1,43 @@
+<div class="container-show">
 
-<div class="content-show">
-  <div class="card-pic">
-    <%= cl_image_tag @dish.photo, class:"dish-img-show"%>
-    <div class="card-description">
-      <h1><%= @dish.name %></h1>
-      <ul>
-      <li> <%= @dish.price %>$ </li>
-      <li> Ingredients <%= @dish.description %> </li>
-      <li> Cooked by <%= @dish.user.name %> </li>
-      </ul>
+  <div class="content-show">
+    <div class="row">
+
+        <div class="col-12 <%= @dish.user == current_user ? '' : ' col-md-6' %>">
+
+          <div class="card-pic-show">
+            <%= cl_image_tag @dish.photo, class:"dish-img-show"%>
+            <div class="card-description">
+              <h1><%= @dish.name %></h1>
+              <ul>
+              <li> <%= @dish.price %>$ </li>
+              <li> Ingredients <%= @dish.description %> </li>
+              <li> Cooked by <%= @dish.user.name %> </li>
+              </ul>
+            </div>
+          </div>
+
+      </div>
+      <% if @dish.user != current_user %>
+        <div class="col-12 col-md-3">
+          <%= simple_form_for [@dish, @booking] do |f| %>
+            <%= f.input :date, html5: true %>
+            <%= f.input :quantity %>
+            <%= f.submit "order here", class:"btn-green"%>
+          <% end %>
+        </div>
+      <% end %>
     </div>
+      
+
+    <div class="content-btn">
+      <% if @dish.user == current_user %>
+        <%= link_to "Edit", edit_dish_path(@dish), class:"btn-green" %> 
+        <%= link_to "Delete this dish", dish_path(@dish), method: :delete, data: {confirm: "Are you sure?"}, class:"btn-green" %>
+      <% end %>
+      <%= link_to "See all dishes", dishes_path, class:"btn-green" %>
+    </div>
+
   </div>
 </div>
 
-<div class="simple-form">
-  <%= simple_form_for [@dish, @booking] do |f| %>
-    <%= f.input :date, html5: true %>
-    <%= f.input :quantity %>
-    <%= f.submit "ORDER HERE", class:"my-btn"%>
-  <% end %>
-</div>
-
-<%= link_to "Edit", edit_dish_path(@dish), class:"btn-green" %>
-<%= link_to "Delete this dish", dish_path(@dish), method: :delete, data: {confirm: "Are you sure?"}, class:"btn-green" %>
-
-<%= link_to "See all dishes", dishes_path, class:"btn-green" %>
