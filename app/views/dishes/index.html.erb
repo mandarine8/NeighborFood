@@ -31,10 +31,12 @@
                       <p><%= dish.price %>$</p>
                     </div>
                     <div class="card-avatar">
-                      <% if dish.user.photo_url.nil? %>
-                        <img class="img-circle-index" src="https://source.unsplash.com/?portrait">
-                      <% else %>
-                        <img class="img-circle-index" src="<%= dish.user.photo_url %>">
+                      <%= link_to user_path(dish.user) do %>
+                        <% if dish.user.photo_url.nil? %>
+                          <img class="img-circle-index" src="https://source.unsplash.com/?portrait">
+                        <% else %>
+                          <img class="img-circle-index" src="<%= dish.user.photo_url %>">
+                        <% end %>
                       <% end %>
                       <h5><%= dish.user.name %></h5>
                     </div>

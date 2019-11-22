@@ -11,14 +11,14 @@ Dish.destroy_all
 User.destroy_all
 
 
-u1 = User.create!(name: "Amandine", ratings: 4, address: "2150 Avenue Laurier Est, Montreal", email: "caramandine@gmail.com", password: "password123", photo_url: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/rdw8huo8s0zfs5wvdzcl.jpg")
-u2 = User.create!(name: "Chloé", ratings: 4, address: "5395 Rue Drolet, Montreal", email: "sauratchloe@gmail.com", password: "password123", photo_url: "https://avatars1.githubusercontent.com/u/55254804?v=4")
-u3 = User.create!(name: "Ryan", ratings: 4, address: "245 Rue Sherbrooke Ouest, Montreal", email: "ryansalah0@gmail.com", password: "password123", photo_url: "https://media.licdn.com/dms/image/C5603AQGjh9zf54-xQA/profile-displayphoto-shrink_100_100/0?e=1579737600&v=beta&t=cq63vIyjXk8wXMWu_HftNoGS1W3MrLiPD9-yjh4ub9s")
-u4 = User.create!(name: "Charlotte", ratings: 4, address: "1374, Avenue du Mont-Royal Est, Montreal", email: "charlottemontane@hotmail.com", password: "password123", photo_url: "https://avatars1.githubusercontent.com/u/55248679?v=4")
-u5 = User.create!(name: "Philippe", ratings: 1, address: "4477 Rue Beaubien Est, Montreal", email: "philou@gmail.com", password: "password123", photo_url: "https://avatars0.githubusercontent.com/u/52076767?v=4")
-u6 = User.create!(name: "Claire", ratings: 5, address: "5588 Avenue du Parc, Montreal", email: "bonjourhi@gmail.com", password: "password123", photo_url: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/zfsshbf41hbf2fjstem5.jpg")
-u7 = User.create!(name: "Jay", ratings: 3, address: "1708 Rue Notre Dame Ouest, Montreal", email: "heyjay@gmail.com", password: "password123", photo_url: "https://ca.slack-edge.com/T02NE0241-UNRHXU7DG-bce462e861d2-512")
-u8 = User.create!(name: "Aline", ratings: 5, address: "5333 Avenue Casgrain, Montreal", email: "thumbsup@gmail.com", password: "password123", photo_url: "https://ca.slack-edge.com/T02NE0241-UCC9WMF43-afc4e292af50-512")
+u1 = User.create!(name: "Amandine", address: "2150 Avenue Laurier Est, Montreal", email: "caramandine@gmail.com", password: "password123", photo_url: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/rdw8huo8s0zfs5wvdzcl.jpg")
+u2 = User.create!(name: "Chloé", address: "5395 Rue Drolet, Montreal", email: "sauratchloe@gmail.com", password: "password123", photo_url: "https://avatars1.githubusercontent.com/u/55254804?v=4")
+u3 = User.create!(name: "Ryan", address: "245 Rue Sherbrooke Ouest, Montreal", email: "ryansalah0@gmail.com", password: "password123", photo_url: "https://media.licdn.com/dms/image/C5603AQGjh9zf54-xQA/profile-displayphoto-shrink_100_100/0?e=1579737600&v=beta&t=cq63vIyjXk8wXMWu_HftNoGS1W3MrLiPD9-yjh4ub9s")
+u4 = User.create!(name: "Charlotte", address: "1374, Avenue du Mont-Royal Est, Montreal", email: "charlottemontane@hotmail.com", password: "password123", photo_url: "https://avatars1.githubusercontent.com/u/55248679?v=4")
+u5 = User.create!(name: "Philippe", address: "4477 Rue Beaubien Est, Montreal", email: "philou@gmail.com", password: "password123", photo_url: "https://avatars0.githubusercontent.com/u/52076767?v=4")
+u6 = User.create!(name: "Claire", address: "5588 Avenue du Parc, Montreal", email: "bonjourhi@gmail.com", password: "password123", photo_url: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/zfsshbf41hbf2fjstem5.jpg")
+u7 = User.create!(name: "Jay", address: "1708 Rue Notre Dame Ouest, Montreal", email: "heyjay@gmail.com", password: "password123", photo_url: "https://ca.slack-edge.com/T02NE0241-UNRHXU7DG-bce462e861d2-512")
+u8 = User.create!(name: "Aline", address: "5333 Avenue Casgrain, Montreal", email: "thumbsup@gmail.com", password: "password123", photo_url: "https://ca.slack-edge.com/T02NE0241-UCC9WMF43-afc4e292af50-512")
 
 
 d1 = Dish.create!(user: u1, name: "Tartiflette", description: "Cheese and potatoes", price: 8, remote_photo_url: "https://assets.afcdn.com/recipe/20160401/38946_w1024h768c1cx2690cy1793.jpg")
@@ -40,6 +40,9 @@ User.all.each do |user|
   Dish.all.each { |dish| Booking.create! user: user, dish: dish}
 end
 
+10.times do
+  Rating.create!(user: u2, note: 5)
+end
 
 
 puts "Seeds Completed"
