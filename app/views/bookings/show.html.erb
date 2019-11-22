@@ -1,35 +1,28 @@
-<div class="navbar-minimalist">
-  <h1><%= link_to"NeighborFood", root_path, class:"btn btn-neighborfood"%></h1>
 
-      <div class="nav-container d-flex justify-content-end">
-        <%= link_to "See all dishes", dishes_path, class:"btn nb-light" %>
-        <%= link_to "Become a cooker", cooker_path, class:"btn nb-light" %>
-        <%= link_to "Login", new_user_session_path, class:"btn btn-login" %>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"btn btn-login" %>
-      </div>
-    </div>
-</div>
-
-<div class="booking-container">
-    <h1> Your order</h1>
-        <div class="card-product">
-            <div class="card-img">
-                <h2><%= cl_image_tag @booking.dish.photo%></h2>
-                </div>
-                    <div class="card-info">
-                        <h2><strong><%= @booking.dish.name %></strong></h2>
-                        <h3> You can pick up your dish at <strong><%= @booking.user.name %>'s home</strong> </h3>
-                        <h3> Address: <strong><%=@booking.user.address%></strong></h3>
-                        <h3> You order <strong><%=@booking.quantity%></strong> <%=@booking.dish.name%></h3>
-                        <h3>Price(taxes incl.): $<strong><%= @booking.dish.price * @booking.quantity %></strong></h3>
-                    </div>
-            </div>
+ <div class="booking-container">
+    <h1> Your order</h1> 
+        <div class="content-img">
+            <h2><%= cl_image_tag @booking.dish.photo%></h2>
         </div>
+            <div class="content-info">
+                <h2><strong><%= @booking.dish.name %></strong></h2>
+                <h3> You can pick up your dish at <strong><%= @booking.user.name %>'s home</strong> </h3>
+                <h3> Address: <strong><%=@booking.user.address%></strong></h3>
+                <h3> You order <strong><%=@booking.quantity%></strong> <%=@booking.dish.name%></h3>
+                <h3>Price(taxes incl.): $<strong><%= @booking.dish.price * @booking.quantity %></strong></h3>
+            </div>
+                <div class="content-btn">
+                    <%= link_to 'ORDER NOW', dishes_path, data: {confirm: "Are you sure?"}, class:"btn-green"%>
+                    <%= link_to "See all dishes", dishes_path, class:"btn-green" %>
+                </div>
+</div> 
 
-<%= link_to 'ORDER NOW', dishes_path, data: {confirm: "Are you sure?"}, class:"btn-green"%>
-<%= link_to "See all dishes", dishes_path, class:"btn-green" %>
-</div>
-
-
+<div class="footer">
+    <div class="footer-links">
+      <a href="#"><i class="fab fa-fw fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-fw fa-github"></i></a>
+      <a href="#"><i class="fab fa-fw fa-instagram"></i></a>
+      </div> <p><i class="fas fa-heart"></i> Cook, Share, Eat <i class="fas fa-heart"></i></p>
+  </div>
 
 

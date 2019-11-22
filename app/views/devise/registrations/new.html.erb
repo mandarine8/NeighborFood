@@ -4,6 +4,7 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+  <!-- rajouter le rajout de la photo de profil -->
     <%= f.input :email,
                 required: true,
                 autofocus: true,
@@ -21,7 +22,6 @@
     <%= f.button :submit, "Sign up" %>
   </div>
 <% end %>
-
 
 
 <%= render "devise/shared/links" %>
