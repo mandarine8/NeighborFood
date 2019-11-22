@@ -16,17 +16,33 @@
 
 
         <div class="position-relative custom-row">
-          <div class="card border col col-sm-6 position-sticky">
+          <div class="card-grid col-sm-6 position-sticky">
             <div class="row" >
               <% @dishes.each do |dish|%>
-                <div class="card-pic border mb-2 col col-sm-12">
+              <div class="col-sm-12">
+
+                <div class="card-pic border mb-2">
                   <%= cl_image_tag dish.photo, class:"dish-img"%>
-                  <div class="card-description p-3">
-                    <h4><%= link_to dish.name, dish_path(dish) %></h4>
-                    <p><%= dish.description %></p>
-                    <p><%= dish.price %>$</p>
+                  <div class="card-pic-content">
+
+                    <div class="card-description p-3">
+                      <h4><%= link_to dish.name, dish_path(dish) %></h4>
+                      <p><%= dish.description %></p>
+                      <p><%= dish.price %>$</p>
+                    </div>
+                    <div class="card-avatar">
+                      <% if dish.user.photo_url.nil? %>
+                        <img class="img-circle-index" src="https://source.unsplash.com/?portrait">
+                      <% else %>
+                        <img class="img-circle-index" src="<%= dish.user.photo_url %>">
+                      <% end %>
+                      <h5><%= dish.user.name %></h5>
+                    </div>
+
                   </div>
                 </div>
+
+              </div>
               <% end %>
             </div>
           </div>
@@ -34,7 +50,7 @@
             id="map"
             style="width: 100%;"
             data-markers="<%= @markers.to_json %>"
-            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"
           ></div>
         </div>
       </div>

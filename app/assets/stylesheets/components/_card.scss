@@ -1,13 +1,33 @@
 .card-pic {
-  display: flex;
   background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-pic-content {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
 }
 
 .card-description {
-  display: flex-column;
+  justify-content: flex-start;
 }
 
 .nf--card-dish {
   border: 3px solid red;
 }
 
+.card-avatar {
+  align-self: flex-end;
+  margin-left: 16px;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  color: rgb(180,180,180);
+  font-weight: normal;
+  font-size: 16px;
+  text-transform: uppercase;
+}
