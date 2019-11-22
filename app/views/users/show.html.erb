@@ -1,3 +1,12 @@
+<div class="navbar-minimalist">
+  <h1><%= link_to"NeighborFood", root_path, class:"btn btn-neighborfood"%></h1>
+  <div class="nav-container d-flex justify-content-end">
+    <%= link_to "See all dishes", dishes_path, class:"btn nb-light" %>
+    <%= link_to "Become a cooker", cooker_path, class:"btn nb-light" %>
+    <%= link_to "Login", new_user_session_path, class:"btn btn-login" %>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"btn btn-login" %>
+  </div>      <!-- <a href="#" class="btn-blue"> Add your dish !</a> -->
+</div>
 <div class="container">
 
   <div class="user-profile-header">
@@ -7,6 +16,7 @@
       <div class="info-user"><%= @user.address %>
        <p><%= @user.email %></p>
        <p><strong>World Famous</strong> for cooking: <strong><%= @dishes.last.name %></strong>
+
   </div>
 
   <div class="user-profile-grid">
@@ -18,6 +28,7 @@
         <p><%= dish.description %> (<%= dish.price %> $)</p>
         <%# cl_image_tag dish.photo%>
       <% end %>
+        <%= link_to "Add your dish", new_dish_path, class:"btn-green" %>
     </div>
 
     <div class="user-booked-dishes-container">
@@ -26,11 +37,10 @@
         <div><strong><%= booked_dish.name %></strong></div>
         <p><%= booked_dish.description %> (<%= booked_dish.price %> $)</p>
       <% end %>
+        <%= link_to "Make an order", dishes_path, class:"btn-green btn-block" %>
     </div>
 
     <div class="user-actions-container">
-        <%= link_to "Add your dish", new_dish_path, class:"btn-green btn-block" %>
-        <%= link_to "Make an order", dishes_path, class:"btn-green btn-block" %>
     </div>
 
   </div>

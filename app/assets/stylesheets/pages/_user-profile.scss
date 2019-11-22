@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 16px;
+  background-color: white;
 }
 
 @media (min-width: 764px) {
@@ -17,12 +18,16 @@
   }
 }
 
+.container {
+  background-color: white;
+}
 
-// h1 {
-//   margin-right: 850px
-// }
+.jumbotron {
+background-color: #6f9a8d;
 
-// .info-user {
-//   margin-right: 830px;
-//   margin-top: -20px;
-// }
+}
+
+.user-cooked-dishes-container {
+  display: flex-column;
+  margin-bottom: 24px;
+}
