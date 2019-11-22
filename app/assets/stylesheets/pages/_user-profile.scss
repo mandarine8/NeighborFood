@@ -5,6 +5,27 @@
   background-color: white;
 }
 
+.container {
+  background-color: white;
+  color: black;
+}
+
+.jumbotron {
+background-color: #6f9a8d;
+position: relative;
+}
+
+.rating {
+  position: absolute;
+    right: 24px;
+    top: 8px;
+}
+
+.user-cooked-dishes-container {
+  display: flex-column;
+  margin-bottom: 24px;
+}
+
 @media (min-width: 764px) {
   .user-profile-grid {
     grid-template-columns: 1fr 1fr;
@@ -16,19 +37,4 @@
   .user-profile-grid {
     grid-template-columns: 2fr 2fr 1fr;
   }
-}
-
-.container {
-  background-color: white;
-  color: black;
-}
-
-.jumbotron {
-background-color: #6f9a8d;
-
-}
-
-.user-cooked-dishes-container {
-  display: flex-column;
-  margin-bottom: 24px;
 }
