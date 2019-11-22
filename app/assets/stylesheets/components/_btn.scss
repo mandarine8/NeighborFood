@@ -14,12 +14,56 @@
   color: white;
   padding: 10px;
   border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  &:hover {
+   background-color: #6f9a8d;
+   border: 1px solid #1f6650;
+   color: white;
+   text-decoration: none;
+  }
+ }
+
+ .btn-green-user {
+  background-color: #1f6650;
+  color: white;
+  padding: 10px;
+  border-radius: 50px;
+  height: 40px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  &:hover {
+   background-color: #6f9a8d;
+   border: 1px solid #1f6650;
+   color: white;
+   text-decoration: none;
+  }
+ }
+
+ .btn-green-booking {
+  background-color: #1f6650;
+  color: white;
+  padding: 10px;
+  border-radius: 50px;
   height: 50px;
   text-align: center;
   font-family: 'Roboto', sans-serif;
   text-decoration: none;
   font-weight: 500;
   font-size: 14px;
+  margin: 16px;
+  height: 32px;
+  justify-align: center;
+
   &:hover {
    background-color: #6f9a8d;
    border: 1px solid #1f6650;
@@ -70,15 +114,25 @@
 
 .btn.nb-light {
   color: #4A4A4A;
-
   border: 1px solid #1f6650;
   padding: 8px 24px;
+  margin: 5px;
   border-radius: 50px;
   font-weight: lighter;
   opacity: 0.6;
   &:hover {
     color: #1f6650;
     border: 1px solid #1f6650;
+    transition: opacity 0.3s ease;
+  }
+}
+
+.btn.nb-dropdown{
+  color: #4A4A4A;
+  font-weight: lighter;
+  font-size: 15px;
+  &:hover {
+    color: #1f6650;
     transition: opacity 0.3s ease;
   }
 }

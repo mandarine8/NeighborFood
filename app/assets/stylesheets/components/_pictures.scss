@@ -5,8 +5,8 @@
 }
 
 .dish-img-show {
-  height: 200px;
-  width: 25%;
+  height: 350px;
+  width: 60%;
   object-fit: cover;
 }
 
@@ -14,4 +14,12 @@
   height: 200px;
   width: 25%;
   object-fit: cover;
+}
+
+.dish-img-booking {
+  height: 200px;
+  width: 20%;
+  object-fit: cover;
+  margin-left: 24px;
+  margin-right: 24px;
 }

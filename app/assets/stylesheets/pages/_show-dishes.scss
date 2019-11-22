@@ -1,10 +1,43 @@
-.content-show h1 {
-  color: #1f6650;
-  margin-left: 16px;
-  background-color: white;
+.card-description {
+  margin: 15px;
+  
 }
 
-.simple-form {
-  margin-bottom: 32px;
-  background-color: white;
+body {
+  color: white;
 }
+
+.content-btn {
+  display: flex;
+  justify-content: left;
+  align-items:center;
+  padding: 6px;
+  margin: 6px;
+
+  .btn-green {
+    width: 120px;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+  }
+}
+.content-show {
+  border-style: solid;
+  border-color: rgb(182, 178, 178);
+  margin: 40px;
+  padding: 40px;
+  
+}
+.container-show {
+  background-color: white;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+.card-pic-show {
+  margin-left: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+

@@ -1,28 +1,20 @@
-
- <div class="booking-container">
-    <h1> Your order</h1> 
-        <div class="content-img">
-            <h2><%= cl_image_tag @booking.dish.photo%></h2>
-        </div>
-            <div class="content-info">
-                <h2><strong><%= @booking.dish.name %></strong></h2>
-                <h3> You can pick up your dish at <strong><%= @booking.user.name %>'s home</strong> </h3>
-                <h3> Address: <strong><%=@booking.user.address%></strong></h3>
-                <h3> You order <strong><%=@booking.quantity%></strong> <%=@booking.dish.name%></h3>
-                <h3>Price(taxes incl.): $<strong><%= @booking.dish.price * @booking.quantity %></strong></h3>
-            </div>
-                <div class="content-btn">
-                    <%= link_to 'ORDER NOW', dishes_path, data: {confirm: "Are you sure?"}, class:"btn-green"%>
-                    <%= link_to "See all dishes", dishes_path, class:"btn-green" %>
-                </div>
-</div> 
-
-<div class="footer">
-    <div class="footer-links">
-      <a href="#"><i class="fab fa-fw fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-fw fa-github"></i></a>
-      <a href="#"><i class="fab fa-fw fa-instagram"></i></a>
-      </div> <p><i class="fas fa-heart"></i> Cook, Share, Eat <i class="fas fa-heart"></i></p>
+<div class="booking-page">
+  <div class="title-booking">
+   <h3> Your order</h3>
   </div>
 
-
+  <div class="booking-content">
+        <%=cl_image_tag @booking.dish.photo, class:"dish-img-booking"%>
+    <div class="content-info">
+        <h2><strong><%= @booking.dish.name %></strong></h2>
+        <p> You can pick up your dish at <strong><%= @booking.user.name %>'s home</strong> </p>
+        <p> Address: <strong><%=@booking.user.address%></strong></p>
+        <p> You order <strong><%=@booking.quantity%></strong> <%=@booking.dish.name%></p>
+        <p>Price(taxes incl.): $<strong><%= @booking.dish.price * @booking.quantity %></strong></p>
+    </div>
+  </div>
+      <div class="content-btn">
+          <%= link_to 'ORDER NOW', dishes_path, data: {confirm: "Are you sure?"}, class:"btn-green-booking"%>
+          <%= link_to "See all dishes", dishes_path, class:"btn-green-booking" %>
+      </div>
+</div>

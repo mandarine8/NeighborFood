@@ -1,30 +1,39 @@
 
-.booking-container {
-    display: flex;
-    border: light;
-    margin-left: auto;
-    margin-right: auto;
-    background:white;
-    h1 {
-        color: black;
-        text-align: center;
-    }
+.booking-content {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  align-self: flex-start;
 }
 
-.content-img {
-    padding: 50px;
-
+.title-booking {
+  background-color: white;
+  color: grey;
+  padding: 16px;
 }
+
 .content-btn {
     text-align: bottom;
+    margin-top: 24px;
+    display: flex;
+    background-color: white;
 }
 
 .content-info {
-    
-    color: #1f6650;;
+    color: #5f6769;
     background:white;
     border: #1f6650;
     text-align: left;
-    padding: 5px;
-    margin: 12px;
+    display: flex;
+    flex-direction: column;
+    h2{
+      color: #1f6650;
+      text-transform: uppercase;
+    }
+
+}
+
+.booking-page {
+  background-color: white;
 }
