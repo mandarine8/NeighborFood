@@ -21,13 +21,12 @@
   font-weight: 500;
   font-size: 14px;
   &:hover {
-   background-color: blue;
+   background-color: #6f9a8d;
    border: 1px solid #1f6650;
    color: white;
    text-decoration: none;
   }
  }
-
 
  .btn-search {
   display: inline-block;
@@ -61,10 +60,10 @@
   margin-left: 16px;
   border-radius: 50px;
   color: white;
-  background-color: #6f9a8d;
+  background-color: #1f6650;
   overflow: auto;
   &:hover {
-    background-color: #1f6650;
+    background-color: #6f9a8d;
     border: 1px solid #1f6650;
   }
 }
@@ -83,7 +82,6 @@
     transition: opacity 0.3s ease;
   }
 }
-
 
 .my_btn {
     display: inline-block;
