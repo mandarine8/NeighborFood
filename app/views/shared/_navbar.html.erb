@@ -27,7 +27,9 @@
   </div>
 
   <% else %>
+  <div class="navbar-btn-login">
     <%= link_to "Log In", new_user_session_path, class:"btn nb-light" %>
     <%= link_to "Become a cooker", new_user_registration_path, class:"btn nb-light" %>
+  </div>
   <% end %>
 </div>
