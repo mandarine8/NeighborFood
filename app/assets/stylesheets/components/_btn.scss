@@ -28,6 +28,25 @@
   }
  }
 
+ .btn-green-user {
+  background-color: #1f6650;
+  color: white;
+  padding: 10px;
+  border-radius: 50px;
+  height: 40px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  &:hover {
+   background-color: #6f9a8d;
+   border: 1px solid #1f6650;
+   color: white;
+   text-decoration: none;
+  }
+ }
+
  .btn-green-booking {
   background-color: #1f6650;
   color: white;
