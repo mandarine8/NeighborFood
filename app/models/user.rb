@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :dishes
   has_many :booked_dishes, through: :bookings, source: :dish
-  has_many :ratings
+  has_many :ratings, dependent: :destroy
 
   validates :name, presence: true, uniqueness: true
   validates :address, presence: true, uniqueness: true
