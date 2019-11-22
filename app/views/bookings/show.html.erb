@@ -1,6 +1,6 @@
 
  <div class="booking-container">
-    <h1> Your order</h1> 
+    <h1> Your order</h1>
         <div class="content-img">
             <h2><%= cl_image_tag @booking.dish.photo%></h2>
         </div>
@@ -15,14 +15,4 @@
                     <%= link_to 'ORDER NOW', dishes_path, data: {confirm: "Are you sure?"}, class:"btn-green"%>
                     <%= link_to "See all dishes", dishes_path, class:"btn-green" %>
                 </div>
-</div> 
-
-<div class="footer">
-    <div class="footer-links">
-      <a href="#"><i class="fab fa-fw fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-fw fa-github"></i></a>
-      <a href="#"><i class="fab fa-fw fa-instagram"></i></a>
-      </div> <p><i class="fas fa-heart"></i> Cook, Share, Eat <i class="fas fa-heart"></i></p>
-  </div>
-
-
+</div>
